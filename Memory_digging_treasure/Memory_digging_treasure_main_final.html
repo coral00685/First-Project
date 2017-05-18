@@ -1,0 +1,617 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>記憶挖寶-main</title>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <style>
+            body {
+                    background-image:url("image/image2_19.png");
+                    background-position: left top; 
+                    background-repeat: no-repeat;　　
+                    background-attachment: fixed; 　　
+            } 
+            
+            table{
+                position: fixed;
+                margin-top:20px;
+                margin-left:30px;
+            }
+            
+            #Result{
+                position: fixed;
+                color:blue;
+                font-size:40px;
+                margin-left:30px;
+                top:430px;
+            }
+            
+            #time{
+                position: fixed;
+                color:blue;
+                font-size:40px;
+                margin-left:30px;
+                top:500px;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+    
+        <div id="img" >
+        <table  id="table"> 
+        
+        <tr>
+        <td width=70px height=70px><img id="img0" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img1" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img2" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img3" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img4" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img5" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="spa0"></td>   
+        <td width=70px height=70px><img id="spa1"></td>
+        <td width=70px height=70px><img id="spa2"></td>
+        <td width=70px height=70px><img id="spa3"></td>
+        <td width=70px height=70px><img id="spa4"></td>
+        <td width=70px height=70px><img id="spa5"></td>
+        </tr>
+        <tr>
+        <td width=70px height=70px><img id="img6" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img7" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img8" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img9" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img10" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img11" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="spa6"></td>
+        <td width=70px height=70px><img id="spa7"></td>
+        <td width=70px height=70px><img id="spa8"></td>
+        <td width=70px height=70px><img id="spa9"></td>
+        <td width=70px height=70px><img id="spa10"></td>
+        <td width=70px height=70px><img id="spa11"></td>
+        </tr>
+        <tr>
+        <td width=70px height=70px><img id="img12" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img13" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img14" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img15" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img16" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img17" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="spa12"></td>
+        <td width=70px height=70px><img id="spa13"></td>
+        <td width=70px height=70px><img id="spa14"></td>
+        <td width=70px height=70px><img id="spa15"></td>
+        <td width=70px height=70px><img id="spa16"></td>
+        <td width=70px height=70px><img id="spa17"></td>
+        </tr>
+        <tr>
+        <td width=70px height=70px><img id="img18" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img19" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img20" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img21" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img22" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img23" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="spa18"></td>
+        <td width=70px height=70px><img id="spa19"></td>
+        <td width=70px height=70px><img id="spa20"></td>
+        <td width=70px height=70px><img id="spa21"></td>
+        <td width=70px height=70px><img id="spa22"></td>
+        <td width=70px height=70px><img id="spa23"></td>
+        </tr>
+        <tr>
+        <td width=70px height=70px><img id="img24" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img25" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img26" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img27" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img28" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="img29" src="image/18.jpg"></td>
+        <td width=70px height=70px><img id="spa24"></td>
+        <td width=70px height=70px><img id="spa25"></td>
+        <td width=70px height=70px><img id="spa26"></td>
+        <td width=70px height=70px><img id="spa27"></td>
+        <td width=70px height=70px><img id="spa28"></td>
+        <td width=70px height=70px><img id="spa29"></td>
+        </tr>
+        </table>
+        
+        <div id="result">Score：0</div>
+        <div id="time">Time：35</div> 
+
+        <script>
+     
+            var A = new Array();  //存寶物種類
+                    A[0]="image/11.png";  //寶箱(紅星)
+                    A[1]="image/12.png";  //鑽石(藍星)
+                    A[2]="image/13.png";  //金幣(綠星)
+                    A[3]="image/14.png";  //炸彈(黑球)
+                    A[4]="image/18.jpg";  //冰磚(空格)
+                    
+            //存每個寶物需要出現幾次:寶箱(紅星):3個,鑽石(藍星):8個,金幣(綠星):11個,炸彈(黑球):5個,沒有內容:3
+            var B = new Array();  
+                    B[0]="image/11.png";  
+                    B[1]="image/11.png";  
+                    B[2]="image/11.png";  
+                    B[3]="image/12.png";  
+                    B[4]="image/12.png";  
+                    B[5]="image/12.png";
+                    B[6]="image/12.png";
+                    B[7]="image/12.png";
+                    B[8]="image/12.png";
+                    B[9]="image/12.png";
+                    B[10]="image/12.png";
+                    B[11]="image/13.png";
+                    B[12]="image/13.png";
+                    B[13]="image/13.png";
+                    B[14]="image/13.png";
+                    B[15]="image/13.png";
+                    B[16]="image/13.png";
+                    B[17]="image/13.png";
+                    B[18]="image/13.png";
+                    B[19]="image/13.png";
+                    B[20]="image/13.png";
+                    B[21]="image/13.png";
+                    B[22]="image/14.png";
+                    B[23]="image/14.png";
+                    B[24]="image/14.png";
+                    B[25]="image/14.png";
+                    B[26]="image/14.png";
+                    B[27]="";
+                    B[28]="";
+                    B[29]="";
+            
+            var D = new Array(30);  //存隨機交換後之寶物
+            var E = new Array(30);  //存點擊寶物後之內容
+            
+            var sound1 = new Audio("music/music1.mp3");     //點擊冰磚後出現之音效
+            var sound2 = new Audio("music/explosion.mp3");  //點擊炸彈後出現之音效
+      
+            function blank(){    //全部變成冰磚
+                var C = new Array(30);
+                for(var i=0; i<C.length; i++){
+                            var n ="#img" + i;
+                            $(n).prop("src",A[4]);
+                }
+            }
+            
+            function pattern(){   //交換B陣列所有寶物
+                    
+                    for(var i=0; i<200; i++){
+                        var temp;
+                        var temp1 = Math.floor(Math.random()*30);
+                        var temp2 = Math.floor(Math.random()*30);
+                    
+                        B[temp] = B[temp1];
+                        B[temp1] = B[temp2];
+                        B[temp2] = B[temp];
+                    }
+                    
+                    //將交換後之B陣列的寶物放置於D陣列
+                    
+                    for(var i=0; i<B.length; i++){
+                            var n ="#img" + i;
+                            $(n).prop("src",B[i]);
+                            D[i] = B[i];
+                    }
+            }
+      
+            function startGame(){   //開始遊戲
+                alert("一、遊戲開始有5秒的記憶時間。" + "\n"+ "\n" + "二、玩家可滑鼠點擊挖寶。" + "\n"+ "\n" + "三、遊戲時間為35秒。" + "\n");
+            }
+            
+            var z = 35;
+            function timer(){  //計時器，倒數35秒
+                
+                if(z >= 0){
+                    z--;
+                }else{
+                    
+                }
+                
+                if(z == -1){
+                    endGame();
+                z = z+1;
+                    
+                }
+                
+                time.innerHTML = "Time：" + z;
+            }
+            
+            var stop;
+            function ready(){  //Ready Go
+                alert(" Ready Go! ");
+                stop = setInterval(timer, 1000);
+            }
+            
+            function endGame(){    //結束遊戲，並依分數給予評級
+                var grade;
+                if( score < 40){
+                    grade = "Bad!";
+                }else{
+                    if(40 <= score && score< 90){
+                        grade = "Very Good! ";
+                    }else{
+                        grade = "Perfect!";
+                    }
+                }
+                
+                alert("Game over!!! " + "\n"+ "\n" + "Score = " + score + "\n"+ "\n" + grade);
+                
+                function display(){  //假如沒有點下冰磚，結束遊戲時，會顯現未點下之冰磚內容
+                    
+                    for(var i=0; i<30; i++){
+                            var n = "#img" + i;
+                            if(E[i]=="image/15.png"){
+                                
+                            }else{
+                                $(n).prop("src",D[i]);
+                            }
+                         }
+                }
+                
+                display();
+                clearInterval(stop);
+            }
+            
+            function image(a){   //判斷點擊到除了炸彈、藍色空格時,其他寶物會顯示在右方對應之陣列
+                var temp = D[a];
+                var n = "#img" + a;
+                var m = "#spa" + a;
+                    if(temp != (("image/15.png")&&("image/14.png"))){
+                         $(n).prop("src","image/15.png");  
+                         $(m).prop("src",temp); 
+                    }else{
+                        
+                    }
+            }
+            
+            var score = 0;
+            function analysis(a){   //判斷點擊冰磚後寶物之分數
+                var temp = D[a];
+                        if(temp == "image/11.png"){
+                            score +=15;
+                        }else{
+                            if(temp == "image/12.png"){
+                                score +=7;
+                            }else{
+                                if(temp == "image/13.png"){
+                                    score +=3;
+                                }else{
+                                    if(temp == "image/14.png"){
+                                        endGame();
+                                    }else{
+                                        score +=0;
+                                    }
+                                }
+                            }
+                        }
+                result.innerHTML = "Score：" + score;
+            }
+            
+            function sound(a){  //設置點下冰磚及炸彈之音效
+                
+                    var temp = D[a];
+                    
+                    if( temp =="image/14.png" ){    //假如點擊到炸彈會出現炸彈之音效
+                        sound2.play();
+                    }else{
+                        sound1.play();
+                    }
+            }
+            
+            function clickImage(){  //開始點擊圖片
+                
+                 $("#img0").one("click",
+                        function(){
+                            sound(0);                      //點擊冰磚出現音效
+                            $("#img0").prop("src",D[0]);  //點擊冰磚後出現冰磚後之寶物
+                            analysis(0);                //判斷點擊冰磚後出現之寶物內容，決定分數
+                            image(0);                  //點擊冰磚後，冰磚的內容會顯示於右方對應之空格中
+                            E[0] = "image/15.png";    //點擊冰磚後E陣列會存放藍色空格
+                            
+                         }
+                    );
+                        
+                    $("#img1").one("click",
+                        function(){
+                            sound(1);
+                            $("#img1").prop("src",D[1]);
+                            analysis(1);
+                            image(1);
+                            E[1] = "image/15.png";
+                            
+                        }
+                    );
+                        
+                    $("#img2").one("click",
+                        function(){
+                            sound(2);
+                            $("#img2").prop("src",D[2]);
+                            analysis(2);
+                            image(2);
+                            E[2] = "image/15.png";
+                        }
+                    );
+                        
+                    $("#img3").one("click",
+                        function(){
+                            sound(3);
+                            $("#img3").prop("src",D[3]);
+                            analysis(3);
+                            image(3);
+                            E[3] = "image/15.png";
+                        }
+                    );
+                        
+                    $("#img4").one("click",
+                        function(){
+                            sound(4);
+                            $("#img4").prop("src",D[4]);
+                            analysis(4);
+                            image(4);
+                            E[4] = "image/15.png";
+                        }
+                    );
+                        
+                    $("#img5").one("click",
+                        function(){
+                            sound(5);
+                            $("#img5").prop("src",D[5]);
+                            analysis(5);
+                            image(5);
+                            E[5] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img6").one("click",
+                        function(){
+                              sound(6);
+                              $("#img6").prop("src",D[6]);
+                              analysis(6);
+                              image(6);
+                              E[6] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img7").one("click",
+                        function(){
+                              sound(7);
+                              $("#img7").prop("src",D[7]);
+                              analysis(7);
+                              image(7);
+                              E[7] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img8").one("click",
+                        function(){
+                              sound(8);
+                              $("#img8").prop("src",D[8]);
+                              analysis(8);
+                              image(8);
+                              E[8] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img9").one("click",
+                        function(){
+                              sound(9);
+                              $("#img9").prop("src",D[9]);
+                              analysis(9);
+                              image(9);
+                              E[9] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img10").one("click",
+                        function(){
+                              sound(10);
+                              $("#img10").prop("src",D[10]);
+                              analysis(10);
+                              image(10);
+                              E[10] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img11").one("click",
+                        function(){
+                              sound(11);
+                              $("#img11").prop("src",D[11]);
+                              analysis(11);
+                              image(11);
+                              E[11] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img12").one("click",
+                        function(){
+                              sound(12);
+                              $("#img12").prop("src",D[12]);
+                              analysis(12);
+                              image(12);
+                              E[12] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img13").one("click",
+                        function(){
+                              sound(13);
+                              $("#img13").prop("src",D[13]);
+                              analysis(13);
+                              image(13);
+                              E[13] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img14").one("click",
+                        function(){
+                              sound(14);
+                              $("#img14").prop("src",D[14]);
+                              analysis(14);
+                              image(14);
+                              E[14] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img15").one("click",
+                        function(){
+                              sound(15);
+                              $("#img15").prop("src",D[15]);
+                              analysis(15);
+                              image(15);
+                              E[15] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img16").one("click",
+                        function(){
+                              sound(16);
+                              $("#img16").prop("src",D[16]);
+                              analysis(16);
+                              image(16);
+                              E[16] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img17").one("click",
+                        function(){
+                              sound(17);
+                              $("#img17").prop("src",D[17]);
+                              analysis(17);
+                              image(17);
+                              E[17] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img18").one("click",
+                        function(){
+                              sound(18);
+                              $("#img18").prop("src",D[18]);
+                              analysis(18);
+                              image(18);
+                              E[18] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img19").one("click",
+                        function(){
+                              sound(19);
+                              $("#img19").prop("src",D[19]);
+                              analysis(19);
+                              image(19);
+                              E[19] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img20").one("click",
+                        function(){
+                              sound(20);
+                              $("#img20").prop("src",D[20]);
+                              analysis(20);
+                              image(20);
+                              E[20] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img21").one("click",
+                        function(){
+                              sound(21);
+                              $("#img21").prop("src",D[21]);
+                              analysis(21);
+                              image(21);
+                              E[21] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img22").one("click",
+                        function(){
+                              sound(22);
+                              $("#img22").prop("src",D[22]);
+                              analysis(22);
+                              image(22);
+                              E[22] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img23").one("click",
+                        function(){
+                              sound(23);
+                              $("#img23").prop("src",D[23]);
+                              analysis(23);
+                              image(23);
+                              E[23] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img24").one("click",
+                        function(){
+                              sound(24);
+                              $("#img24").prop("src",D[24]);
+                              analysis(24);
+                              image(24);
+                              E[24] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img25").one("click",
+                        function(){
+                              sound(25);
+                              $("#img25").prop("src",D[25]);
+                              analysis(25);
+                              image(25);
+                              E[25] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img26").one("click",
+                        function(){
+                              sound(26);
+                              $("#img26").prop("src",D[26]);
+                              analysis(26);
+                              image(26);
+                              E[26] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img27").one("click",
+                        function(){
+                              sound(27);
+                              $("#img27").prop("src",D[27]);
+                              analysis(27);
+                              image(27);
+                              E[27] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img28").one("click",
+                        function(){
+                              sound(28);
+                              $("#img28").prop("src",D[28]);
+                              analysis(28);
+                              image(28);
+                              E[28] = "image/15.png";
+                        }
+                    );
+                    
+                    $("#img29").one("click",
+                        function(){
+                              sound(29);
+                              $("#img29").prop("src",D[29]);
+                              analysis(29);
+                              image(29);
+                              E[29] = "image/15.png";
+                        }
+                    );
+                    
+            }
+            
+            setTimeout(startGame, 1000);
+            setTimeout(pattern, 2000);
+            setTimeout(blank, 6000);
+            setTimeout(ready, 6100);
+            setTimeout(clickImage, 6100);
+            
+        </script>
+       
+    </body>
+    
+</html>

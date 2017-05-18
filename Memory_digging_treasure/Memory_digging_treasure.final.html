@@ -1,0 +1,276 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> ~記憶挖寶~ </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.min.css" rel= "stylesheet">
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    
+        <script>
+             
+                function Button1_onclick() {       
+                    text.innerHTML ="<ol><li>遊戲一開始會有5秒時間讓玩家記住冰磚下東西的位置，5秒後冰磚會自動結冰。</li><br><li>玩家必須要快速記住寶物的位置，然後使用滑鼠控制快速地在冰磚上挖掘即可。</li></ol><br>";
+                    $("#image1").prop("src","");
+                    $("#image2").prop("src","image/image15.png");
+                    $("#image3").prop("src","");
+                    $("#image4").prop("src","");
+                    $("#image5").prop("src","");
+                }
+
+                
+                 function Button2_onclick() {       
+                    text.innerHTML ="冰磚下的物品<br><ul><li>寶箱：得15分。</li><li>寶石：得7分。</li><li>金元寶：得3分。</li><li>炸彈：爆炸並提早結束遊戲。</li></ul>";
+                    $("#image1").prop("src","image/11.png");
+                    $("#image2").prop("src","image/12.png");
+                    $("#image3").prop("src","image/13.png");
+                    $("#image4").prop("src","image/14.png");
+                    $("#image5").prop("src","");
+                     
+                 }
+                
+                 function Button3_onclick() {       
+                    text.innerHTML ="<ol><li>遊戲時間：限時35秒。</li><br><li>操作方法：用滑鼠點按冰磚（鏟東西）。</li></ol>";
+                    $("#image1").prop("src","");
+                    $("#image2").prop("src","");
+                    $("#image3").prop("src","");
+                    $("#image4").prop("src","image/image16.png");
+                    $("#image5").prop("src","");
+                     
+                 }
+                    
+        </script>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <style>
+        
+            body {
+                background-color:#cce5ff;
+                background-image:url("image/background19.jpg");
+                background-position: left top; 
+                /*background-repeat: no-repeat;　　*/
+                background-attachment: fixed; 
+            } 
+            
+            h1{
+                position: fixed;
+                left:39%;
+                top:10px;
+                text-align:center;
+                font-size:45px;
+                letter-spacing:12px;  /*文字間隔*/
+                color:#0000ff;
+                text-shadow: #ffff00 0px 0px 20px; /* for browsers without spread support */
+                text-shadow: #ffff00 0px 0px 20px 20px; /* for browsers with spread support */
+                margin-top: 40px;
+                padding-left:35px;
+                font-family: verdana, Times New Roman,微軟正黑體; 
+                
+            }
+        
+            .box{
+                position: fixed;
+                top: 130px;
+                left: 4%; /*左邊算起整個版面之4%*/
+                width: 580px;  /*邊框寬度*/
+                height:500px;
+                background-color: #b3c6ff;
+                color: #000066;
+                border: 2px solid #4d94ff;
+                padding: 20px;
+                /*增加邊框圓弧度 */
+        		-moz-border-radius: 20px; /*IE*/
+        		-webkit-border-radius: 20px; /*chrome*/
+        		-khtml-border-radius: 20px;
+        		-ms-border-radius: 20px;   /*微軟*/
+        		border-radius: 20px;
+        		/*增加邊框陰影*/
+        		-moz-box-shadow: 0 1px 5px #333;  /*IE*/
+        		-webkit-box-shadow: 0 1px 5px #333;  /*chrome*/
+        		z-index: 101;
+        		/*webkit-可省略沒關係(特定瀏覽器)*/
+            }
+        
+            .box h3{
+                font-family: verdana, Times New Roman,微軟正黑體; 
+                border-bottom: 1px dashed #006bb3; 
+                margin: -20px -20px 0px -20px;
+                padding: 10px;
+                background-color: #ccebff;
+                color: #004d80;
+                /*增加邊框圓弧度*/
+		        -moz-border-radius: 20px 20px 0px 0px;
+		        -webkit-border-radius:20px 20px 0px 0px;
+		        -khtml-border-radius:20px 20px 0px 0px;
+		        -ms-border-radius:20px 20px 0px 0px;
+		        border-radius:20px 20px 0px 0px;
+                /*左邊將邊框圓弧度讓大邊框的實線顯示出來*/
+        		-webkit-border-top-left-radius: 18px;
+        		-webkit-border-top-right-radius: 18px;
+        		-khtml-border-top-left-radius: 18px;
+        		-khtml-border-top-right-radius: 18px;
+            }
+            
+            .box2{
+                position: fixed;
+                top: 130px;
+                left: 52%; /*左邊算起整個版面之52%*/
+                width: 580px;  /*邊框寬度*/
+                height:500px;
+                background-color: #b3c6ff;
+                color: #000066;
+                border: 2px solid #4d94ff;
+                padding: 20px;
+                /*增加邊框圓弧度 */
+        		-moz-border-radius: 20px; /*IE*/
+        		-webkit-border-radius: 20px; /*chrome*/
+        		-khtml-border-radius: 20px;
+        		-ms-border-radius: 20px;   /*微軟*/
+        		border-radius: 20px;
+        		/*增加邊框陰影*/
+        		-moz-box-shadow: 0 1px 5px #333;  /*IE*/
+        		-webkit-box-shadow: 0 1px 5px #333;  /*chrome*/
+        		z-index: 101;
+        		/*webkit-可省略沒關係(特定瀏覽器)*/
+            }
+        
+            .box2 h3{
+                font-family: verdana, Times New Roman,微軟正黑體; 
+                border-bottom: 1px dashed #006bb3; 
+                margin: -20px -20px 0px -20px;
+                padding: 10px;
+                background-color: #ccebff;
+                color: #004d80;
+                /*增加邊框圓弧度*/
+		        -moz-border-radius: 20px 20px 0px 0px;
+		         -webkit-border-radius:20px 20px 0px 0px;
+		        -khtml-border-radius:20px 20px 0px 0px;
+		        -ms-border-radius:20px 20px 0px 0px;
+		        border-radius: 20px 20px 0px 0px;
+                /*左邊將邊框圓弧度讓大邊框的實線顯示出來*/
+        		-webkit-border-top-left-radius: 18px;
+        		-webkit-border-top-right-radius: 18px;
+        		-khtml-border-top-left-radius: 18px;
+        		-khtml-border-top-right-radius: 18px;
+            }
+            
+            .box3{
+                position: fixed;
+                top: 190px;
+                left: 58px; 
+                width: 525px;  /*邊框寬度*/
+                height:375px;
+                background-color: #b3c6ff;
+                color: #000066;
+                border: 1px solid #b3c6ff;
+                padding: 20px;
+            }
+            
+            .box4{
+                position: fixed;
+                top: 245px;
+                left: 78px; 
+                width: 525px;  /*邊框寬度*/
+                height:350px;
+                background-color: #f0e6ff;
+                color: #000066;
+                border: 1px solid #4d94ff;
+                padding: 20px;
+                
+            }
+            
+            .box5{
+                position: fixed;
+                top: 245px;
+                left: 740px; 
+                width: 525px;  /*邊框寬度*/
+                height:350px;
+                background-color: #f0e6ff;
+                color: #000066;
+                border: 1px solid #4d94ff;
+                padding: 20px;
+                
+            }
+            
+            .text{
+                margin-top: 5px;
+                font-family: Times New Roman,微軟正黑體;
+                font-size:20px;
+            }
+            
+            #game{
+                
+                margin-top:40px;
+            }
+            
+            #Button4{
+                margin-top:20px;
+                margin-left:430px;
+                
+            }
+            
+            #penguin1{
+                margin-top:10px;
+                margin-left:10px;
+            }
+            #penguin2{
+                margin-top:15px;
+                margin-left:2px;
+            }
+            #penguin3{
+                margin-top:30px;
+                margin-left:2px;
+            }
+            
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <div id="penguin">
+            <img id="penguin1" src="image/image9.png"><img id="penguin3" src="image/image11.png"><img id="penguin2" src="image/image10.png">
+        </div>    
+        
+        <h1><strong>記憶挖寶</strong></h1>
+        
+            <div class="box" id="box">
+                <h3>遊戲介紹</h3>
+                
+                <div class="box3" id="box3">
+                    <div class="button">
+                        <input type="button" id="Button1" class="btn btn-warning btn-md" name="Button1" value="遊戲說明" onclick="Button1_onclick()">
+                        <input type="button" id="Button2" class="btn btn-primary btn-md" name="Button2" value="遊戲分數" onclick="Button2_onclick()">
+                        <input type="button" id="Button3" class="btn btn-success btn-md" name="Button3" value="遊戲規則" onclick="Button3_onclick()">
+                    </div>
+                    
+                    <div class="box4" id="box4">
+                        <div><img id="image5" src="image/image14.png"></div>
+                        <div class="text" id="text"></div>
+                        <div><img id="image1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="image2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="image3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="image4"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="box2" id="box2">
+                <h3>遊戲</h3>
+                
+                <div class="game">
+                    <a id="imgshref" href="Memory_digging_treasure_main_final.html" target="_blank">
+                        <img id="game" src="image/image13.png">
+                    </a>
+                </div>
+                
+                <a id="imgshref" href="Memory_digging_treasure_main_final.html" target="_blank">
+                    <input type="button" id="Button4" class="btn btn-warning btn-lg" name="Button4" value="開始遊戲" >
+                </a>
+                
+            </div>
+                
+  
+    
+    </body>
+
+</html>
